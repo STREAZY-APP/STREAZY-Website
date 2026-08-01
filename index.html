@@ -6,25 +6,16 @@
     <title>STREAZY - Redirecting...</title>
     <script>
         (function() {
-            // 1. Die vom Browser bevorzugte Sprache abrufen (z.B. "de-DE" oder "en-US")
             const userLang = navigator.language || navigator.userLanguage; 
             const langCode = userLang.split('-')[0].toLowerCase(); // Extrahiert "de", "en", etc.
-
-            // 2. Liste der unterstützten Sprachen
-            const supportedLanguages = ['de', 'en', 'es', 'it', 'fr', 'nl', 'pl', 'pt'];
-
-            // 3. Zielpfad bestimmen (Standard ist Englisch, falls die Sprache nicht in der Liste ist)
+            const supportedLanguages = ['de', 'en', 'es', 'it', 'fr','hi', 'nl', 'pl', 'pt'];
             let targetLang = 'en';
             if (supportedLanguages.includes(langCode)) {
                 targetLang = langCode;
             }
-
-            // 4. Weiterleitung durchführen
-            // Beispiel: streazy.app -> streazy.app/de/
             window.location.href = '/' + targetLang + '/';
         })();
     </script>
-    <!-- Fallback für Nutzer ohne JavaScript -->
     <noscript>
         <meta http-equiv="refresh" content="0; url=/en/">
     </noscript>
