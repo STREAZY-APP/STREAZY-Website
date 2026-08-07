@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="STREAZY helps you discover verified people nearby and meet in real life. Download STREAZY for free on Google Play.">
+
+    <title>STREAZY – Meet real people near you</title>
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1f1f1f;
+            background: #ffffff;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* ---------- HEADER ---------- */
+
+        .header {
+            width: 100%;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #eeeeee;
+            background: #ffffff;
+        }
+
+        .header-inner {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 150px;
+            max-width: 40vw;
+            height: auto;
+            border-radius: 22%;
+        }
+
+        .header-download {
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 24px;
+            background: #111111;
+            color: white;
+        }
+
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 65px 24px 40px;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 1.02;
+            margin: 0 0 24px;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            line-height: 1.55;
+            margin: 0 0 30px;
+            color: #4a4a4a;
+        }
+
+        .play-button img {
+            width: 210px;
+            max-width: 75%;
+            height: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .play-button img:hover {
+            transform: scale(1.03);
+        }
+
+        .free-note {
+            font-size: 20px;
+            color: #666666;
+            margin-top: 12px;
+        }
+
+        .hero-image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 410px;
+            height: auto;
+            display: block;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            max-width: 410px;
+        }
+
+        .ai-disclaimer {
+            margin-top: 5px;
+            font-size: 12px;
+            line-height: 1.2;
+            color: #888888;
+            text-align: right;
+        }
+
+        /* ---------- TRUST ---------- */
+
+        .trust-section {
+            background: #f7f7f7;
+            padding: 65px 24px;
+        }
+
+        .trust-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .trust-inner h2 {
+            font-size: 34px;
+            margin: 0 0 45px;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .benefit {
+            padding: 10px 20px;
+        }
+
+        .benefit-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #111111;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .benefit h3 {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+
+        .benefit p {
+            color: #555555;
+            font-size: 16px;
+            margin: 0;
+        }
+
+
+        /* ---------- SAFETY ---------- */
+
+        .safety {
+            padding: 70px 24px;
+        }
+
+        .safety-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .safety h2 {
+            font-size: 34px;
+            margin: 0 0 20px;
+        }
+
+        .safety p {
+            font-size: 18px;
+            color: #4f4f4f;
+            margin: 0;
+        }
+
+
+        /* ---------- FINAL CTA ---------- */
+
+        .final-cta {
+            background: #111111;
+            color: white;
+            padding: 70px 24px;
+            text-align: center;
+        }
+
+        .final-cta-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 38px;
+            margin: 0 0 14px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            color: #dddddd;
+            margin: 0 0 28px;
+        }
+
+        .final-cta .play-button img {
+            width: 220px;
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid #eeeeee;
+            font-size: 13px;
+            color: #777777;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            margin-bottom: 14px;
+        }
+
+        .legal-links a {
+            color: #555555;
+            text-decoration: none;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 760px) {
+
+            .header {
+                padding: 15px 18px;
+            }
+
+            .logo {
+                width: 125px;
+            }
+
+            .header-download {
+                font-size: 12px;
+                padding: 9px 14px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 42px 22px 35px;
+                gap: 35px;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin: 0 auto;
+            }
+
+            h1 {
+                font-size: 43px;
+                letter-spacing: -1.3px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-image {
+                max-width: 300px;
+            }
+
+            .hero-image-container {
+                max-width: 300px;
+            }
+
+            .trust-section {
+                padding: 55px 22px;
+            }
+
+            .trust-inner h2 {
+                font-size: 29px;
+                margin-bottom: 35px;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .safety {
+                padding: 55px 22px;
+            }
+
+            .safety h2 {
+                font-size: 29px;
+            }
+
+            .safety p {
+                font-size: 17px;
+            }
+
+            .final-cta {
+                padding: 55px 22px;
+            }
+
+            .final-cta h2 {
+                font-size: 31px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <img src="/logo.png"
+             alt="STREAZY"
+             class="logo">
+
+        <a
+            class="header-download"
+            href="https://play.google.com/store/apps/details?id=app.streazy">
+            Get the app
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+            <h1>
+                Meet verified people in India.
+            </h1>
+
+            <p class="hero-subtitle">
+                STREAZY helps you discover people nearby
+                and turn online connections into real-life encounters.
+                Verified profiles. Real people. Quality Dating.
+            </p>
+
+            <a
+                class="play-button"
+                href="https://play.google.com/store/apps/details?id=app.streazy"
+                aria-label="Get STREAZY on Google Play">
+
+                <img
+                    src="/GetItOnGooglePlay_Badge_Web_color_English.png"
+                    alt="Get it on Google Play">
+
+            </a>
+
+            <div class="free-note">
+                Free to use for woman.
+            </div>
+
+        </div>
+
+
+        <div class="hero-image-wrapper">
+
+            <div class="hero-image-container">
+
+                <img
+                    src="/nearby_users_picture_for_woman.png"
+                    alt="STREAZY app"
+                    class="hero-image">
+
+                <div class="ai-disclaimer">
+                    AI-generated images
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- BENEFITS -->
+
+    <section class="trust-section">
+
+        <div class="trust-inner">
+
+            <h2>
+                Made for real connections.
+            </h2>
+
+            <div class="benefits">
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Verified profiles
+                    </h3>
+
+                    <p>
+                        Users are verified before they can
+                        see or contact other people.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        ◎
+                    </div>
+
+                    <h3>
+                        People nearby
+                    </h3>
+
+                    <p>
+                        Discover people around you using
+                        STREAZY's local search.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Real-life connections
+                    </h3>
+
+                    <p>
+                        STREAZY is designed to help
+                        real encounters happen.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SAFETY -->
+
+    <section class="safety">
+
+        <div class="safety-inner">
+
+            <h2>
+                Your safety matters.
+            </h2>
+
+            <p>
+                STREAZY requires photo verification and
+                provides tools to report inappropriate behaviour.
+                When meeting someone new, always meet in a public place
+                and protect your personal information.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+
+        <div class="final-cta-inner">
+
+            <h2>
+                Someone interesting may be closer than you think.
+            </h2>
+
+            <p>
+                Start discovering real people near you with STREAZY.
+            </p>
+
+            <a
+                class="play-button"
+                href="https://play.google.com/store/apps/details?id=app.streazy"
+                aria-label="Download STREAZY on Google Play">
+
+                <img
+                    src="/GetItOnGooglePlay_Badge_Web_color_English.png"
+                    alt="Get it on Google Play">
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="legal-links">
+
+        <a href="/en/privacy/">
+            Privacy Policy
+        </a>
+
+        <a href="/en/safety/">
+            Safety Guidelines
+        </a>
+
+        <a href="/en/terms/">
+            Terms of Service
+        </a>
+
+        <a href="/en/imprint/">
+            Imprint
+        </a>
+
+    </div>
+
+    <div>
+        © STREAZY
+    </div>
+
+</footer>
+
+
+</body>
+</html>
